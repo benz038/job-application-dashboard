@@ -19,7 +19,17 @@
     </aside>
 
     <main class="main-content" id="dashboard">
-      <header class="topbar"><div><div class="eyebrow">YOUR CAREER WORKSPACE</div><h1>Job application dashboard</h1><p class="subtitle">A clear view of your search, all in one place.</p></div><button class="primary-btn" id="addTopBtn"><span>＋</span> Add application</button></header>
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">YOUR CAREER WORKSPACE</div>
+          <h1>Job application dashboard</h1>
+          <p class="subtitle">A clear view of your search, all in one place.</p>
+        </div>
+        <div class="header-actions">
+          <button class="primary-btn" id="addTopBtn">+ Add application</button>
+          <button class="secondary-btn" id="saveRepoBtn" title="Save applications to repo">Save to GitHub</button>
+        </div>
+      </header>
 
       <section class="stats-grid" aria-label="Application summary">
         <article class="stat-card"><div class="stat-heading"><span>Total applications</span><span class="stat-icon purple">▤</span></div><div class="stat-value" id="totalStat">0</div><div class="stat-foot">All-time applications tracked</div></article>
@@ -30,8 +40,8 @@
 
       <section class="content-card" id="applications">
         <div class="section-header"><div><h2>Your applications</h2><p>Track each role from application to outcome.</p></div><button class="secondary-btn" id="exportBtn">↓ Export CSV</button></div>
-        <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search company or role…" aria-label="Search applications" /></label><select id="statusFilter" aria-label="Filter by status"><option value="All">All statuses</option><option>Saved</option><option>Applied</option><option>Assessment</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select><select id="sortSelect" aria-label="Sort applications"><option value="newest">Newest applied</option><option value="oldest">Oldest applied</option><option value="company">Company A–Z</option></select></div>
-        <div class="table-wrap"><table><thead><tr><th>COMPANY / ROLE</th><th>DATE APPLIED</th><th>STATUS</th><th>JOB LINK</th><th class="actions-head">ACTIONS</th></tr></thead><tbody id="applicationRows"></tbody></table><div class="empty-state" id="emptyState"><div class="empty-illustration">▤</div><h3>No applications yet</h3><p>Add your first job application to start tracking your search.</p><button class="primary-btn" id="emptyAddBtn">＋ Add application</button></div></div>
+        <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search company or role…" aria-label="Search applications" /></label><select id="statusFilter"><option>All</option><option>Saved</option><option>Applied</option><option>Assessment</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select><select id="sortSelect"><option value="newest">Newest applied</option><option value="oldest">Oldest applied</option><option value="company">Company</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>COMPANY / ROLE</th><th>DATE APPLIED</th><th>STATUS</th><th>JOB LINK</th><th class="actions-head">ACTIONS</th></tr></thead><tbody id="applicationRows"></tbody></table></div>
         <div class="table-footer"><span id="resultsCount">Showing 0 applications</span><button class="text-btn" id="clearFiltersBtn">Clear filters</button></div>
       </section>
       <footer>Made for your next career move <span>·</span> Your data stays in this browser</footer>
