@@ -135,6 +135,10 @@ tbody td{padding:18px 14px;border-bottom:1px solid var(--line)}
 .company-logo{width:40px;height:40px;border-radius:8px;background:var(--line);display:inline-flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
 .company-name{font-weight:600}
 .role-name{color:var(--muted);font-size:13px}
+.job-link{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid rgba(80,118,95,0.18);background:linear-gradient(180deg,rgba(80,118,95,0.10),rgba(80,118,95,0.03));color:var(--purple-dark);font-weight:700;text-decoration:none;letter-spacing:-0.01em;transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease}
+.job-link::after{content:"↗";font-size:16px;line-height:1;transform:translateY(-1px)}
+.job-link:hover,.job-link:focus-visible{background:linear-gradient(180deg,rgba(80,118,95,0.16),rgba(80,118,95,0.06));border-color:rgba(80,118,95,0.35);box-shadow:0 8px 18px rgba(80,118,95,0.12);transform:translateY(-1px)}
+.job-link:focus-visible{outline:2px solid rgba(80,118,95,0.25);outline-offset:2px}
 .status-pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px}
 .status-saved{background:transparent;border:1px solid var(--line);color:var(--muted)}
 .status-applied{background:rgba(98,139,115,0.13);color:var(--purple-dark)}
