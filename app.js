@@ -75,7 +75,7 @@
         <td><div class="company-cell"><div class="company-logo">${escapeHtml(initials || '?')}</div><div><div class="company-name">${escapeHtml(item.company)}</div><div class="role-name">${escapeHtml(item.role)}</div></div></div></td>
         <td class="date-cell">${formatDate(item.date)}</td>
         <td><span class="status-pill ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
-        <td>${safeUrl ? `<a class="job-link" href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">View posting ↗</a>` : '<span>—</span>'}</td>
+        <td>${safeUrl ? `<a class="job-link" href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">View posting</a>` : '<span>—</span>'}</td>
         <td><div class="row-actions"><button class="icon-btn" data-action="edit" data-id="${escapeHtml(item.id)}" aria-label="Edit ${escapeHtml(item.company)}" title="Edit">✎</button><button class="icon-btn" data-action="delete" data-id="${escapeHtml(item.id)}" aria-label="Delete ${escapeHtml(item.company)}" title="Delete">⌫</button></div></td>
       </tr>`;
     }).join('');
