@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f7fb" />
+  <title>JobTrack — Application Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="JobTrack home"><span class="brand-mark">J</span><span>jobtrack<span class="brand-dot">.</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-item active" href="#dashboard"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="#applications" id="applicationsNav"><span>▤</span> Applications <span class="nav-count" id="navCount">0</span></a>
+      <div class="sidebar-bottom"><div class="tip-icon">✦</div><strong>Keep moving forward</strong><p>Every application is a step closer to your next opportunity.</p></div>
+      <div class="local-note"><span class="status-dot"></span> Saved on this device</div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar"><div><div class="eyebrow">YOUR CAREER WORKSPACE</div><h1>Job application dashboard</h1><p class="subtitle">A clear view of your search, all in one place.</p></div><button class="primary-btn" id="addTopBtn"><span>＋</span> Add application</button></header>
+
+      <section class="stats-grid" aria-label="Application summary">
+        <article class="stat-card"><div class="stat-heading"><span>Total applications</span><span class="stat-icon purple">▤</span></div><div class="stat-value" id="totalStat">0</div><div class="stat-foot">All-time applications tracked</div></article>
+        <article class="stat-card"><div class="stat-heading"><span>In progress</span><span class="stat-icon blue">◷</span></div><div class="stat-value" id="progressStat">0</div><div class="stat-foot">Applied, screening or interviewing</div></article>
+        <article class="stat-card"><div class="stat-heading"><span>Offers</span><span class="stat-icon green">✓</span></div><div class="stat-value" id="offersStat">0</div><div class="stat-foot">Opportunities received</div></article>
+        <article class="stat-card"><div class="stat-heading"><span>Response rate</span><span class="stat-icon orange">↗</span></div><div class="stat-value" id="responseStat">0%</div><div class="stat-foot">Offers, interviews or rejections</div></article>
+      </section>
+
+      <section class="content-card" id="applications">
+        <div class="section-header"><div><h2>Your applications</h2><p>Track each role from application to outcome.</p></div><button class="secondary-btn" id="exportBtn">↓ Export CSV</button></div>
+        <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search company or role…" aria-label="Search applications" /></label><select id="statusFilter" aria-label="Filter by status"><option value="All">All statuses</option><option>Saved</option><option>Applied</option><option>Assessment</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select><select id="sortSelect" aria-label="Sort applications"><option value="newest">Newest applied</option><option value="oldest">Oldest applied</option><option value="company">Company A–Z</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>COMPANY / ROLE</th><th>DATE APPLIED</th><th>STATUS</th><th>JOB LINK</th><th class="actions-head">ACTIONS</th></tr></thead><tbody id="applicationRows"></tbody></table><div class="empty-state" id="emptyState"><div class="empty-illustration">▤</div><h3>No applications yet</h3><p>Add your first job application to start tracking your search.</p><button class="primary-btn" id="emptyAddBtn">＋ Add application</button></div></div>
+        <div class="table-footer"><span id="resultsCount">Showing 0 applications</span><button class="text-btn" id="clearFiltersBtn">Clear filters</button></div>
+      </section>
+      <footer>Made for your next career move <span>·</span> Your data stays in this browser</footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><div class="eyebrow">APPLICATION DETAILS</div><h2 id="modalTitle">Add application</h2></div><button class="icon-btn" id="closeModalBtn" aria-label="Close dialog">✕</button></div>
+      <form id="applicationForm">
+        <input type="hidden" id="applicationId" />
+        <div class="form-grid">
+          <label>Company name <span class="required">*</span><input id="companyInput" required maxlength="100" placeholder="e.g. Google" /></label>
+          <label>Job title <span class="required">*</span><input id="roleInput" required maxlength="120" placeholder="e.g. Software Engineer II" /></label>
+          <label>Date applied <span class="required">*</span><input id="dateInput" type="date" required /></label>
+          <label>Status<select id="statusInput"><option>Saved</option><option selected>Applied</option><option>Assessment</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Withdrawn</option></select></label>
+          <label class="full-width">Job posting URL<input id="urlInput" type="url" placeholder="https://careers.example.com/job/123" /></label>
+          <label class="full-width">Notes<textarea id="notesInput" rows="3" maxlength="1500" placeholder="Recruiter contact, next steps, interview notes…"></textarea></label>
+        </div>
+        <div class="form-error" id="formError" role="alert"></div>
+        <div class="modal-actions"><button type="button" class="secondary-btn" id="cancelBtn">Cancel</button><button type="submit" class="primary-btn" id="saveBtn">Save application</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
