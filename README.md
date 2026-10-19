@@ -10,6 +10,7 @@ A lightweight, responsive job application tracker built with plain HTML, CSS and
 - Search by company/role/notes; filter by status; sort by date or company
 - Export applications to CSV
 - Responsive layout for desktop and mobile
+- Light, Dark, and Dracula themes, saved in the current browser
 - Data persists in the current browser using `localStorage`
 - Save the current application list to `jobs.json` through GitHub Actions
 

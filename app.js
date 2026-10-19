@@ -2,6 +2,8 @@
   'use strict';
   const STORAGE_KEY = 'jobtrack.applications.v1';
   const TOKEN_STORAGE_KEY = 'jobtrack.githubToken.v1';
+  const THEME_STORAGE_KEY = 'jobtrack.theme.v1';
+  const themes = ['light', 'dark', 'dracula'];
   const REPOSITORY = document.querySelector('meta[name="github-repository"]')?.content || '';
   const WORKFLOW_FILE = 'save-jobs.yml';
   const statuses = ['Saved', 'Applied', 'Assessment', 'Interview', 'Offer', 'Rejected', 'Withdrawn'];
@@ -10,7 +12,7 @@
     rows: $('applicationRows'), empty: $('emptyState'), total: $('totalStat'), progress: $('progressStat'), offers: $('offersStat'), response: $('responseStat'),
     navCount: $('navCount'), resultsCount: $('resultsCount'), search: $('searchInput'), statusFilter: $('statusFilter'), sort: $('sortSelect'),
     backdrop: $('modalBackdrop'), form: $('applicationForm'), modalTitle: $('modalTitle'), id: $('applicationId'), company: $('companyInput'), role: $('roleInput'), date: $('dateInput'), status: $('statusInput'), url: $('urlInput'), notes: $('notesInput'), error: $('formError'), toast: $('toast'),
-    empty: $('emptyState'), repoBackdrop: $('repoModalBackdrop'), repoForm: $('repoSaveForm'), repoToken: $('gitTokenInput'), rememberToken: $('rememberTokenInput'), repoError: $('repoSaveError'), repoSubmit: $('repoSaveSubmitBtn')
+    empty: $('emptyState'), repoBackdrop: $('repoModalBackdrop'), repoForm: $('repoSaveForm'), repoToken: $('gitTokenInput'), rememberToken: $('rememberTokenInput'), repoError: $('repoSaveError'), repoSubmit: $('repoSaveSubmitBtn'), themeSelect: $('themeSelect')
   };
   let applications = loadApplications();
   let toastTimeout;
@@ -24,6 +26,15 @@
   function persist() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(applications)); return true; }
     catch (error) { showToast('Could not save. Browser storage may be full.'); return false; }
+  }
+  function setTheme(theme, save = false) {
+    const selectedTheme = themes.includes(theme) ? theme : 'light';
+    document.documentElement.dataset.theme = selectedTheme;
+    els.themeSelect.value = selectedTheme;
+    if (save) {
+      try { localStorage.setItem(THEME_STORAGE_KEY, selectedTheme); }
+      catch (error) { /* Keep the selected theme for this page session. */ }
+    }
   }
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -191,6 +202,7 @@
   }
 
   $('addTopBtn').addEventListener('click', () => openModal());
+  els.themeSelect.addEventListener('change', () => setTheme(els.themeSelect.value, true));
   $('emptyAddBtn').addEventListener('click', () => openModal());
   $('saveRepoBtn').addEventListener('click', openRepoModal);
   els.repoForm.addEventListener('submit', saveToGitHub);
@@ -215,6 +227,10 @@
     if (action === 'edit') { const item = applications.find((a) => a.id === id); if (item) openModal(item); }
     if (action === 'delete') deleteApplication(id);
   });
+  let savedTheme = 'light';
+  try { savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light'; }
+  catch (error) { /* Use the default theme when browser storage is unavailable. */ }
+  setTheme(savedTheme);
   render();
   loadRepositoryApplications();
 })();
