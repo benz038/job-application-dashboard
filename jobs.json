@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "bb4c5d28-f6f7-4e1b-8186-420eef9f0985",
+    "company": "x",
+    "role": "x",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "",
+    "notes": "",
+    "createdAt": "2026-10-19T07:24:52.437Z",
+    "updatedAt": "2026-10-19T07:24:52.437Z"
+  },
+  {
+    "id": "beb4ef5f-4136-4676-8b33-331729b63344",
+    "company": "Google",
+    "role": "Software Engineer",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "",
+    "notes": "",
+    "createdAt": "2026-10-19T07:08:51.757Z",
+    "updatedAt": "2026-10-19T07:08:51.757Z"
+  }
+]
