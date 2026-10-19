@@ -1,5 +1,38 @@
 [
   {
+    "id": "71d75773-204e-4c5a-a610-7414e0f90eec",
+    "company": "Cisco",
+    "role": "Software Engineer",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "https://careers.cisco.com/global/en/job/2026347/Software-Engineer",
+    "notes": "",
+    "createdAt": "2026-10-19T15:07:20.100Z",
+    "updatedAt": "2026-10-19T15:07:20.100Z"
+  },
+  {
+    "id": "e3aa2f4a-0c14-4105-bebc-1d3d592b1fac",
+    "company": "JPMC",
+    "role": "Software Engineer 2",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs/preview/210788631/?keyword=Software+Engineer+II+-+Java&location=India&locationId=300000000289360&locationLevel=country&mode=location",
+    "notes": "",
+    "createdAt": "2026-10-19T15:00:02.277Z",
+    "updatedAt": "2026-10-19T15:00:02.277Z"
+  },
+  {
+    "id": "e0e724fb-a7af-460e-a31a-8bd4d38977a3",
+    "company": "JPMC",
+    "role": "Software Engineer 3",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs/preview/210794848/apply/section/1/?keyword=Software+Engineer&location=India&locationId=300000000289360&locationLevel=country&mode=location",
+    "notes": "",
+    "createdAt": "2026-10-19T14:53:25.647Z",
+    "updatedAt": "2026-10-19T14:53:25.647Z"
+  },
+  {
     "id": "cf5a9557-57ea-4f76-8c71-1a65e4d76587",
     "company": "Goldman sachs",
     "role": "The Core Engineering-L2-Bengaluru-Associate-Software Engineering",
