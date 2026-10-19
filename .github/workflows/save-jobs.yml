@@ -1,0 +1,42 @@
+name: Save job applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      jobs_json:
+        description: JSON array of job applications
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate and write jobs.json
+        env:
+          JOBS_JSON: ${{ inputs.jobs_json }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const jobs = JSON.parse(process.env.JOBS_JSON);
+          if (!Array.isArray(jobs)) throw new Error('Expected jobs_json to be an array.');
+          fs.writeFileSync('jobs.json', `${JSON.stringify(jobs, null, 2)}\n`);
+          NODE
+
+      - name: Commit updated jobs.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jobs.json
+          if git diff --cached --quiet; then
+            echo "jobs.json is already up to date."
+          else
+            git commit -m "Update job applications"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

@@ -11,6 +11,7 @@ A lightweight, responsive job application tracker built with plain HTML, CSS and
 - Export applications to CSV
 - Responsive layout for desktop and mobile
 - Data persists in the current browser using `localStorage`
+- Save the current application list to `jobs.json` through GitHub Actions
 
 ## Run locally
 
@@ -35,8 +36,10 @@ Then visit `http://localhost:8000` from this folder.
 
 - No account or login is required.
 - Application records are saved in `localStorage` in the browser where you use the site. They are not uploaded to GitHub or synced between browsers/devices.
+- **Save to GitHub** sends the current list to the repository's `save-jobs.yml` workflow. Create a fine-grained personal access token for this repository with **Actions: read and write** access. The token is saved in browser `localStorage` by default so later saves do not ask for it again; uncheck **Remember token on this device** to remove it. Anyone with access to that browser profile or page scripts can read/use the saved token. Never put a token in `app.js`, HTML, or a committed file.
+- In **Settings → Actions → General → Workflow permissions**, allow read and write permissions so the workflow's `GITHUB_TOKEN` can commit `jobs.json`. The workflow validates the submitted JSON and writes it to the repository's `main` branch. Enable GitHub Pages from that branch if using the hosted page.
 - Clearing site data/browser storage can delete your records. Use **Export CSV** for a backup.
-- GitHub Pages serves a public website when the repository/site is public. Do not put private credentials or secrets in this repository. The job application records themselves remain in your browser storage, not in the repository.
+- `jobs.json` is committed to the repository and may be publicly visible. Do not sync private notes or sensitive information to a public repository. On a fresh browser, the page loads its initial list from `jobs.json`; once browser-local data exists, it remains the active working copy until cleared.
 - The page imports DM Sans and Manrope fonts from Google Fonts; system fallback fonts are used if they are unavailable.
 
 ## Tech

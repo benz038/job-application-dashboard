@@ -1,19 +1,23 @@
 (() => {
   'use strict';
   const STORAGE_KEY = 'jobtrack.applications.v1';
+  const TOKEN_STORAGE_KEY = 'jobtrack.githubToken.v1';
+  const REPOSITORY = document.querySelector('meta[name="github-repository"]')?.content || '';
+  const WORKFLOW_FILE = 'save-jobs.yml';
   const statuses = ['Saved', 'Applied', 'Assessment', 'Interview', 'Offer', 'Rejected', 'Withdrawn'];
   const $ = (id) => document.getElementById(id);
   const els = {
     rows: $('applicationRows'), empty: $('emptyState'), total: $('totalStat'), progress: $('progressStat'), offers: $('offersStat'), response: $('responseStat'),
     navCount: $('navCount'), resultsCount: $('resultsCount'), search: $('searchInput'), statusFilter: $('statusFilter'), sort: $('sortSelect'),
-    backdrop: $('modalBackdrop'), form: $('applicationForm'), modalTitle: $('modalTitle'), id: $('applicationId'), company: $('companyInput'), role: $('roleInput'), date: $('dateInput'), status: $('statusInput'), url: $('urlInput'), notes: $('notesInput'), error: $('formError'), toast: $('toast')
+    backdrop: $('modalBackdrop'), form: $('applicationForm'), modalTitle: $('modalTitle'), id: $('applicationId'), company: $('companyInput'), role: $('roleInput'), date: $('dateInput'), status: $('statusInput'), url: $('urlInput'), notes: $('notesInput'), error: $('formError'), toast: $('toast'),
+    empty: $('emptyState'), repoBackdrop: $('repoModalBackdrop'), repoForm: $('repoSaveForm'), repoToken: $('gitTokenInput'), rememberToken: $('rememberTokenInput'), repoError: $('repoSaveError'), repoSubmit: $('repoSaveSubmitBtn')
   };
   let applications = loadApplications();
   let toastTimeout;
 
   function loadApplications() {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
       return Array.isArray(saved) ? saved.filter((item) => item && item.id && item.company && item.role) : [];
     } catch (error) { return []; }
   }
@@ -65,7 +69,7 @@
       </tr>`;
     }).join('');
     const hasVisible = visible.length > 0;
-    els.empty.style.display = hasVisible ? 'none' : 'block';
+    els.empty.hidden = hasVisible;
     els.rows.parentElement.querySelector('thead').style.display = hasVisible ? '' : 'none';
     els.resultsCount.textContent = `Showing ${visible.length} of ${applications.length} application${applications.length === 1 ? '' : 's'}`;
   }
@@ -88,6 +92,77 @@
     els.backdrop.hidden = false; document.body.style.overflow = 'hidden'; els.company.focus();
   }
   function closeModal() { els.backdrop.hidden = true; document.body.style.overflow = ''; }
+  function openRepoModal() {
+    els.repoForm.reset();
+    els.repoError.textContent = '';
+    try { els.repoToken.value = localStorage.getItem(TOKEN_STORAGE_KEY) || ''; }
+    catch (error) { els.repoToken.value = ''; }
+    els.repoBackdrop.hidden = false;
+    document.body.style.overflow = 'hidden';
+    els.repoToken.focus();
+  }
+  function closeRepoModal() {
+    els.repoBackdrop.hidden = true;
+    els.repoToken.value = '';
+    document.body.style.overflow = '';
+  }
+  async function saveToGitHub(event) {
+    event.preventDefault();
+    els.repoError.textContent = '';
+    const GIT_TOKEN = els.repoToken.value.trim();
+    if (!GIT_TOKEN) {
+      els.repoError.textContent = 'Enter a GitHub token to continue.';
+      return;
+    }
+    const [owner, repository] = REPOSITORY.split('/');
+    if (!owner || !repository) {
+      els.repoError.textContent = 'The GitHub repository is not configured for this page.';
+      return;
+    }
+    try {
+      if (els.rememberToken.checked) localStorage.setItem(TOKEN_STORAGE_KEY, GIT_TOKEN);
+      else localStorage.removeItem(TOKEN_STORAGE_KEY);
+    } catch (error) {
+      els.repoError.textContent = 'Browser storage is unavailable. Enable site storage or uncheck “Remember token on this device”.';
+      return;
+    }
+    els.repoSubmit.disabled = true;
+    els.repoSubmit.textContent = 'Starting workflow…';
+    try {
+      const response = await fetch(`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repository)}/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+        method: 'POST',
+        headers: { Accept: 'application/vnd.github+json', Authorization: `Bearer ${GIT_TOKEN}`, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref: 'main', inputs: { jobs_json: JSON.stringify(applications) } })
+      });
+      if (!response.ok) {
+        const details = await response.json().catch(() => ({}));
+        if (details.message?.includes('Resource not accessible by personal access token')) {
+          throw new Error('This token needs Actions: read and write access to this repository. Update its permissions, then try again.');
+        }
+        throw new Error(details.message || `GitHub returned HTTP ${response.status}. Check token access and repository settings.`);
+      }
+      closeRepoModal();
+      showToast('Save workflow started. jobs.json will update shortly.');
+    } catch (error) {
+      els.repoError.textContent = error.message || 'Could not start the GitHub save workflow.';
+    } finally {
+      els.repoSubmit.disabled = false;
+      els.repoSubmit.textContent = 'Save jobs.json';
+    }
+  }
+  async function loadRepositoryApplications() {
+    try {
+      if (localStorage.getItem(STORAGE_KEY) !== null) return;
+      const response = await fetch('jobs.json', { cache: 'no-store' });
+      if (!response.ok || localStorage.getItem(STORAGE_KEY) !== null) return;
+      const saved = await response.json();
+      if (!Array.isArray(saved)) return;
+      applications = saved.filter((item) => item && item.id && item.company && item.role && statuses.includes(item.status));
+      render();
+    } catch (error) {
+      // Local file previews do not support fetching jobs.json; the dashboard remains usable.
+    }
+  }
   function saveApplication(event) {
     event.preventDefault(); els.error.textContent = '';
     const company = els.company.value.trim(); const role = els.role.value.trim(); const url = els.url.value.trim();
@@ -117,10 +192,19 @@
 
   $('addTopBtn').addEventListener('click', () => openModal());
   $('emptyAddBtn').addEventListener('click', () => openModal());
+  $('saveRepoBtn').addEventListener('click', openRepoModal);
+  els.repoForm.addEventListener('submit', saveToGitHub);
+  $('closeRepoModalBtn').addEventListener('click', closeRepoModal);
+  $('cancelRepoSaveBtn').addEventListener('click', closeRepoModal);
+  els.repoBackdrop.addEventListener('click', (event) => { if (event.target === els.repoBackdrop) closeRepoModal(); });
   $('closeModalBtn').addEventListener('click', closeModal);
   $('cancelBtn').addEventListener('click', closeModal);
   els.backdrop.addEventListener('click', (event) => { if (event.target === els.backdrop) closeModal(); });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !els.backdrop.hidden) closeModal(); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    if (!els.backdrop.hidden) closeModal();
+    if (!els.repoBackdrop.hidden) closeRepoModal();
+  });
   els.form.addEventListener('submit', saveApplication);
   [els.search, els.statusFilter, els.sort].forEach((element) => element.addEventListener(element === els.search ? 'input' : 'change', render));
   $('clearFiltersBtn').addEventListener('click', () => { els.search.value = ''; els.statusFilter.value = 'All'; els.sort.value = 'newest'; render(); });
@@ -132,4 +216,5 @@
     if (action === 'delete') deleteApplication(id);
   });
   render();
+  loadRepositoryApplications();
 })();
