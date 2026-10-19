@@ -1,5 +1,16 @@
 [
   {
+    "id": "cf5a9557-57ea-4f76-8c71-1a65e4d76587",
+    "company": "Goldman sachs",
+    "role": "The Core Engineering-L2-Bengaluru-Associate-Software Engineering",
+    "date": "2026-10-19",
+    "status": "Applied",
+    "url": "https://higher.gs.com/roles/186814",
+    "notes": "",
+    "createdAt": "2026-10-19T14:34:01.105Z",
+    "updatedAt": "2026-10-19T14:34:01.105Z"
+  },
+  {
     "id": "1c1902e0-0b00-448d-bf06-babb9c2138b2",
     "company": "Zscaler",
     "role": "Software Development Engineer - Java + Distributed Systems",
