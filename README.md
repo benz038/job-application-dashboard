@@ -1,6 +1,6 @@
 # JobTrack — Job Application Dashboard
 
-A lightweight, responsive job application tracker built with plain HTML, CSS and JavaScript. No login, backend, database, framework, or build step required.
+A lightweight, responsive job application tracker built with plain HTML, CSS and JavaScript. No login, backend, database, framework, or build step required..
 
 ## Features
 
