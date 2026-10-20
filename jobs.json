@@ -1,5 +1,71 @@
 [
   {
+    "id": "14d305cd-5e57-4d85-b832-d35bbc88d542",
+    "company": "rippling",
+    "role": "Software Engineer 1",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://ats.rippling.com/en-GB/rippling/jobs/28e76743-13cf-4e30-94f2-bbaa021a2d9b?jobSite=LinkedIn",
+    "notes": "",
+    "createdAt": "2026-10-20T06:29:27.126Z",
+    "updatedAt": "2026-10-20T06:29:27.126Z"
+  },
+  {
+    "id": "1dcc25e0-b1eb-4bab-921f-06cc25a9595e",
+    "company": "amazon",
+    "role": "Software Engineer 2",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://www.amazon.jobs/en-gb/jobs/10566660/sde-ii-relay-central",
+    "notes": "",
+    "createdAt": "2026-10-20T06:05:18.692Z",
+    "updatedAt": "2026-10-20T06:05:18.692Z"
+  },
+  {
+    "id": "bfa14109-74cc-45ef-8d60-42a6437b806f",
+    "company": "Amazon",
+    "role": "Software Engineer 1",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://www.amazon.jobs/en-GB/applicant/jobs/10522139/apply?locale_override=en-US",
+    "notes": "",
+    "createdAt": "2026-10-20T05:43:26.771Z",
+    "updatedAt": "2026-10-20T05:43:26.771Z"
+  },
+  {
+    "id": "18ec361b-e99a-4c42-bebe-7fd9b62435bd",
+    "company": "Walmart",
+    "role": "Software Engineer 2",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/IN-KA-BANGALORE-Home-Office-Building-10/XMLNAME--IND--Software-Engineer-II_R-2533616",
+    "notes": "",
+    "createdAt": "2026-10-20T05:31:42.146Z",
+    "updatedAt": "2026-10-20T05:31:42.146Z"
+  },
+  {
+    "id": "64f1c574-765b-4b58-bb8d-0879986fb543",
+    "company": "Intellicus",
+    "role": "Software Engineer Java",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://mail.google.com/mail/u/0/#inbox/KtbxLvHkVtNPBNpNLbKLvZfDFNrjhcVjFL",
+    "notes": "",
+    "createdAt": "2026-10-20T05:27:09.452Z",
+    "updatedAt": "2026-10-20T05:27:09.452Z"
+  },
+  {
+    "id": "cdb76e90-95de-47ca-80f8-dfdade9676c1",
+    "company": "juspay",
+    "role": "DEV-BE01 : Software Development Engineer Backend : Full-Time : Bangalore",
+    "date": "2026-10-20",
+    "status": "Applied",
+    "url": "https://joinus.juspay.in/?jobId=DEV-BE01",
+    "notes": "",
+    "createdAt": "2026-10-20T05:15:12.605Z",
+    "updatedAt": "2026-10-20T05:15:12.605Z"
+  },
+  {
     "id": "71d75773-204e-4c5a-a610-7414e0f90eec",
     "company": "Cisco",
     "role": "Software Engineer",
