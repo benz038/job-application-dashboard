@@ -1,5 +1,16 @@
 [
   {
+    "id": "dffe2cb9-c49d-4a3e-8998-1012d487b22e",
+    "company": "Qualcomm",
+    "role": "Engineer",
+    "date": "2026-10-21",
+    "status": "Applied",
+    "url": "https://careers.qualcomm.com/careers?start=10&location=India&pid=446721549211&sort_by=timestamp&filter_include_remote=0&filter_include_relocation=0",
+    "notes": "",
+    "createdAt": "2026-10-21T18:22:07.328Z",
+    "updatedAt": "2026-10-21T18:22:07.328Z"
+  },
+  {
     "id": "14d305cd-5e57-4d85-b832-d35bbc88d542",
     "company": "rippling",
     "role": "Software Engineer 1",
@@ -15,11 +26,11 @@
     "company": "amazon",
     "role": "Software Engineer 2",
     "date": "2026-10-20",
-    "status": "Applied",
+    "status": "Rejected",
     "url": "https://www.amazon.jobs/en-gb/jobs/10566660/sde-ii-relay-central",
     "notes": "",
     "createdAt": "2026-10-20T06:05:18.692Z",
-    "updatedAt": "2026-10-20T06:05:18.692Z"
+    "updatedAt": "2026-10-21T18:18:11.643Z"
   },
   {
     "id": "bfa14109-74cc-45ef-8d60-42a6437b806f",
