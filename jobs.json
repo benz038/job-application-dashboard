@@ -1,5 +1,16 @@
 [
   {
+    "id": "e980133c-443d-4317-a6a6-2c5001e5aedf",
+    "company": "Rubrik",
+    "role": "Software Engineer- core",
+    "date": "2026-10-22",
+    "status": "Withdrawn",
+    "url": "https://www.rubrik.com/company/careers/departments/job.8282005?gh_jid=8282005",
+    "notes": "Job expired",
+    "createdAt": "2026-10-22T06:32:45.680Z",
+    "updatedAt": "2026-10-22T06:33:53.439Z"
+  },
+  {
     "id": "dffe2cb9-c49d-4a3e-8998-1012d487b22e",
     "company": "Qualcomm",
     "role": "Engineer",
@@ -103,11 +114,11 @@
     "company": "JPMC",
     "role": "Software Engineer 3",
     "date": "2026-10-19",
-    "status": "Applied",
+    "status": "Rejected",
     "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs/preview/210794848/apply/section/1/?keyword=Software+Engineer&location=India&locationId=300000000289360&locationLevel=country&mode=location",
     "notes": "",
     "createdAt": "2026-10-19T14:53:25.647Z",
-    "updatedAt": "2026-10-19T14:53:25.647Z"
+    "updatedAt": "2026-10-26T09:25:07.249Z"
   },
   {
     "id": "cf5a9557-57ea-4f76-8c71-1a65e4d76587",
@@ -136,11 +147,11 @@
     "company": "Rubrik",
     "role": "Software Engineer- SaaS O365",
     "date": "2026-10-19",
-    "status": "Applied",
+    "status": "Rejected",
     "url": "https://www.rubrik.com/company/careers/departments/job.8256407?gh_jid=8256407",
     "notes": "",
     "createdAt": "2026-10-19T13:56:59.477Z",
-    "updatedAt": "2026-10-19T13:56:59.477Z"
+    "updatedAt": "2026-10-26T09:25:41.279Z"
   },
   {
     "id": "44d6868b-08b4-4c2c-9fed-961493ae85e8",
