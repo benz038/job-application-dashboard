@@ -1,14 +1,47 @@
 [
   {
+    "id": "7ee45601-7e4a-4276-aa0c-05f8a66455cf",
+    "company": "cisco",
+    "role": "Software Engineer",
+    "date": "2026-10-27",
+    "status": "Applied",
+    "url": "https://careers.cisco.com/global/en/job/2026820/Software-Engineer",
+    "notes": "Referral applied and email sent to hiring manager\nrajchhab@cisco.com\n9811101954",
+    "createdAt": "2026-10-27T10:19:00.298Z",
+    "updatedAt": "2026-10-27T10:28:22.761Z"
+  },
+  {
+    "id": "c8dcf191-6378-4f00-b0e6-9784b0ff1ab1",
+    "company": "coinbase",
+    "role": "Software Engineer",
+    "date": "2026-10-27",
+    "status": "Saved",
+    "url": "https://www.coinbase.com/en-in/careers/positions/8165441?gh_jid=8165441",
+    "notes": "",
+    "createdAt": "2026-10-27T05:49:17.277Z",
+    "updatedAt": "2026-10-27T10:18:20.836Z"
+  },
+  {
+    "id": "4c1c07a0-b239-42a2-b679-940827fdff3b",
+    "company": "Paypal",
+    "role": "Software Engineer",
+    "date": "2026-10-27",
+    "status": "Applied",
+    "url": "https://paypal.eightfold.ai/careers/apply?pid=274922786629&hl=en-US&domain=paypal.com&Codes=W-LINKEDIN",
+    "notes": "",
+    "createdAt": "2026-10-27T05:23:53.300Z",
+    "updatedAt": "2026-10-27T05:23:53.300Z"
+  },
+  {
     "id": "e980133c-443d-4317-a6a6-2c5001e5aedf",
     "company": "Rubrik",
     "role": "Software Engineer- core",
     "date": "2026-10-22",
-    "status": "Withdrawn",
+    "status": "Applied",
     "url": "https://www.rubrik.com/company/careers/departments/job.8282005?gh_jid=8282005",
     "notes": "Job expired",
     "createdAt": "2026-10-22T06:32:45.680Z",
-    "updatedAt": "2026-10-22T06:33:53.439Z"
+    "updatedAt": "2026-10-27T10:18:41.315Z"
   },
   {
     "id": "dffe2cb9-c49d-4a3e-8998-1012d487b22e",
@@ -30,7 +63,7 @@
     "url": "https://ats.rippling.com/en-GB/rippling/jobs/28e76743-13cf-4e30-94f2-bbaa021a2d9b?jobSite=LinkedIn",
     "notes": "",
     "createdAt": "2026-10-20T06:29:27.126Z",
-    "updatedAt": "2026-10-22T04:06:33.728Z"
+    "updatedAt": "2026-10-27T05:58:35.327Z"
   },
   {
     "id": "1dcc25e0-b1eb-4bab-921f-06cc25a9595e",
