@@ -1,5 +1,27 @@
 [
   {
+    "id": "12965228-bfa4-45d8-be0b-abd5db1d10b5",
+    "company": "BCT",
+    "role": "Software Engineer",
+    "date": "2026-10-28",
+    "status": "Applied",
+    "url": "https://mail.google.com/mail/u/0/#sent/QgrcJHrhwzTcSnNlRhLJSMGFTGcZVvZhJLB",
+    "notes": "HR email sent",
+    "createdAt": "2026-10-28T15:42:52.890Z",
+    "updatedAt": "2026-10-28T15:42:52.890Z"
+  },
+  {
+    "id": "a34c5d1e-d85a-44d7-9d2d-70089fa2a47c",
+    "company": "Microsoft",
+    "role": "Software Engineer 2",
+    "date": "2026-10-01",
+    "status": "Rejected",
+    "url": "https://microsoft.eightfold.ai/careers?domain=microsoft.com&start=0&location=India&pid=1970393556985473&sort_by=match&filter_include_remote=1&filter_include_relocation=0",
+    "notes": "",
+    "createdAt": "2026-10-28T04:51:43.632Z",
+    "updatedAt": "2026-10-28T04:51:43.632Z"
+  },
+  {
     "id": "7ee45601-7e4a-4276-aa0c-05f8a66455cf",
     "company": "cisco",
     "role": "Software Engineer",
