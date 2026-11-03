@@ -1,5 +1,38 @@
 [
   {
+    "id": "b3c0376f-066a-44d7-b08d-5f9f05cf56ab",
+    "company": "Plasma",
+    "role": "Software Engineer",
+    "date": "2026-11-02",
+    "status": "Applied",
+    "url": "https://mail.google.com/mail/u/0/#sent/KtbxLwglqjRbMDrThPlvdKWQdfBCqrdpvV",
+    "notes": "Email to recruiter",
+    "createdAt": "2026-11-02T18:14:22.736Z",
+    "updatedAt": "2026-11-02T18:14:22.736Z"
+  },
+  {
+    "id": "882becc4-6e06-4c29-9a08-4e8450dccbe9",
+    "company": "citi",
+    "role": "Software Engineer 1",
+    "date": "2026-11-02",
+    "status": "Applied",
+    "url": "https://jobs.citi.com/job/-/-/287/102161061744?source=APPLICANT_SOURCE-3-354&utm_medium=job_posting&utm_campaign=apac_experienced&utm_content=social_media&utm_term=393693070&ss=paid&utm_source=linkedin",
+    "notes": "referral piyush",
+    "createdAt": "2026-11-02T18:11:23.171Z",
+    "updatedAt": "2026-11-02T18:11:23.172Z"
+  },
+  {
+    "id": "b76fcc18-04b4-45ec-bc3b-70ad178e3a62",
+    "company": "Intuit",
+    "role": "Software Engineer 1",
+    "date": "2026-10-31",
+    "status": "Applied",
+    "url": "https://jobs.intuit.com/job/-/-/27595/102630301904?cid=job_li_click_in_active-fy20_cn_text_job_intuit-talent",
+    "notes": "referral aditya",
+    "createdAt": "2026-10-31T15:06:00.324Z",
+    "updatedAt": "2026-10-31T15:06:00.324Z"
+  },
+  {
     "id": "12965228-bfa4-45d8-be0b-abd5db1d10b5",
     "company": "BCT",
     "role": "Software Engineer",
