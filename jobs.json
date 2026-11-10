@@ -1,5 +1,29 @@
 [
   {
+    "id": "c31ebd4b-4225-4cb2-a1ed-244b717a2717",
+    "company": "HPE",
+    "role": "Software Engineer 2",
+    "date": "2026-11-10",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://careers.hpe.com/us/en/job/1214507/Software-Engineer-2?utm_source=linkedin",
+    "notes": "",
+    "createdAt": "2026-11-10T18:49:52.358Z",
+    "updatedAt": "2026-11-10T18:49:52.358Z"
+  },
+  {
+    "id": "b233f0df-ea18-45f9-8bd6-a5a016b798c9",
+    "company": "Docusign",
+    "role": "Software Engineer",
+    "date": "2026-11-10",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://careers.docusign.com/careers-home/jobs/30628?lang=en-us",
+    "notes": "",
+    "createdAt": "2026-11-10T18:26:46.217Z",
+    "updatedAt": "2026-11-10T18:26:46.217Z"
+  },
+  {
     "id": "5754c21b-0312-4dfd-b3a4-471ae4991d2d",
     "company": "Sage",
     "role": "Software Engineer",
