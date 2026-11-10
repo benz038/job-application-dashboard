@@ -7,7 +7,7 @@
   const REPOSITORY = document.querySelector('meta[name="github-repository"]')?.content || '';
   const WORKFLOW_FILE = 'save-jobs.yml';
   const statuses = ['Saved', 'Applied', 'Assessment', 'Interview', 'Offer', 'Rejected', 'Withdrawn'];
-  const sources = ['Career site', 'Referral'];
+  const sources = ['Career site', 'Referral', 'Email'];
   const $ = (id) => document.getElementById(id);
   const els = {
     rows: $('applicationRows'), empty: $('emptyState'), total: $('totalStat'), progress: $('progressStat'), offers: $('offersStat'), response: $('responseStat'),
