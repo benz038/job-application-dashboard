@@ -7,11 +7,12 @@
   const REPOSITORY = document.querySelector('meta[name="github-repository"]')?.content || '';
   const WORKFLOW_FILE = 'save-jobs.yml';
   const statuses = ['Saved', 'Applied', 'Assessment', 'Interview', 'Offer', 'Rejected', 'Withdrawn'];
+  const sources = ['Career site', 'Referral'];
   const $ = (id) => document.getElementById(id);
   const els = {
     rows: $('applicationRows'), empty: $('emptyState'), total: $('totalStat'), progress: $('progressStat'), offers: $('offersStat'), response: $('responseStat'),
     navCount: $('navCount'), resultsCount: $('resultsCount'), search: $('searchInput'), statusFilter: $('statusFilter'), sort: $('sortSelect'),
-    backdrop: $('modalBackdrop'), form: $('applicationForm'), modalTitle: $('modalTitle'), id: $('applicationId'), company: $('companyInput'), role: $('roleInput'), date: $('dateInput'), status: $('statusInput'), url: $('urlInput'), notes: $('notesInput'), error: $('formError'), toast: $('toast'),
+    backdrop: $('modalBackdrop'), form: $('applicationForm'), modalTitle: $('modalTitle'), id: $('applicationId'), company: $('companyInput'), role: $('roleInput'), date: $('dateInput'), status: $('statusInput'), source: $('sourceInput'), url: $('urlInput'), notes: $('notesInput'), error: $('formError'), toast: $('toast'),
     empty: $('emptyState'), repoBackdrop: $('repoModalBackdrop'), repoForm: $('repoSaveForm'), repoToken: $('gitTokenInput'), rememberToken: $('rememberTokenInput'), repoError: $('repoSaveError'), repoSubmit: $('repoSaveSubmitBtn'), themeSelect: $('themeSelect')
   };
   let applications = loadApplications();
@@ -49,7 +50,7 @@
     const query = els.search.value.trim().toLowerCase();
     const status = els.statusFilter.value;
     const filtered = applications.filter((item) => {
-      const matchesQuery = !query || `${item.company} ${item.role} ${item.notes || ''}`.toLowerCase().includes(query);
+      const matchesQuery = !query || `${item.company} ${item.role} ${item.source || ''} ${item.notes || ''}`.toLowerCase().includes(query);
       return matchesQuery && (status === 'All' || item.status === status);
     });
     return filtered.sort((a, b) => {
@@ -75,6 +76,7 @@
         <td><div class="company-cell"><div class="company-logo">${escapeHtml(initials || '?')}</div><div><div class="company-name">${escapeHtml(item.company)}</div><div class="role-name">${escapeHtml(item.role)}</div></div></div></td>
         <td class="date-cell">${formatDate(item.date)}</td>
         <td><span class="status-pill ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
+        <td>${sources.includes(item.source) ? `<span class="source-pill">${escapeHtml(item.source)}</span>` : '<span>—</span>'}</td>
         <td>${safeUrl ? `<a class="job-link" href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">View posting</a>` : '<span>—</span>'}</td>
         <td><div class="row-actions"><button class="icon-btn" data-action="edit" data-id="${escapeHtml(item.id)}" aria-label="Edit ${escapeHtml(item.company)}" title="Edit">✎</button><button class="icon-btn" data-action="delete" data-id="${escapeHtml(item.id)}" aria-label="Delete ${escapeHtml(item.company)}" title="Delete">⌫</button></div></td>
       </tr>`;
@@ -99,7 +101,7 @@
     $('saveBtn').textContent = item ? 'Save changes' : 'Save application';
     els.company.value = item?.company || ''; els.role.value = item?.role || '';
     els.date.value = item?.date || new Date().toISOString().slice(0, 10);
-    els.status.value = item?.status || 'Applied'; els.url.value = item?.url || ''; els.notes.value = item?.notes || '';
+    els.status.value = item?.status || 'Applied'; els.source.value = sources.includes(item?.source) ? item.source : ''; els.url.value = item?.url || ''; els.notes.value = item?.notes || '';
     els.backdrop.hidden = false; document.body.style.overflow = 'hidden'; els.company.focus();
   }
   function closeModal() { els.backdrop.hidden = true; document.body.style.overflow = ''; }
@@ -178,10 +180,11 @@
     event.preventDefault(); els.error.textContent = '';
     const company = els.company.value.trim(); const role = els.role.value.trim(); const url = els.url.value.trim();
     if (!company || !role || !els.date.value) { els.error.textContent = 'Company, role and date applied are required.'; return; }
+    if (!sources.includes(els.source.value)) { els.error.textContent = 'Choose Career site or Referral as the application source.'; return; }
     if (url && !safeHttpUrl(url)) { els.error.textContent = 'Enter a valid http:// or https:// job URL.'; return; }
     const id = els.id.value || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`);
     const previous = applications.find((a) => a.id === id);
-    const record = { id, company, role, date: els.date.value, status: statuses.includes(els.status.value) ? els.status.value : 'Applied', url, notes: els.notes.value.trim(), createdAt: previous?.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString() };
+    const record = { id, company, role, date: els.date.value, status: statuses.includes(els.status.value) ? els.status.value : 'Applied', source: els.source.value, url, notes: els.notes.value.trim(), createdAt: previous?.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString() };
     if (previous) applications = applications.map((a) => a.id === id ? record : a); else applications.unshift(record);
     if (persist()) { closeModal(); render(); showToast(previous ? 'Application updated.' : 'Application added.'); }
   }
@@ -193,7 +196,7 @@
   }
   function exportCsv() {
     if (!applications.length) { showToast('Add an application before exporting.'); return; }
-    const columns = ['company', 'role', 'date', 'status', 'url', 'notes'];
+    const columns = ['company', 'role', 'date', 'status', 'source', 'url', 'notes'];
     const quote = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
     const csv = [columns.join(','), ...applications.map((item) => columns.map((key) => quote(item[key])).join(','))].join('\r\n');
     const blob = new Blob(['\ufeff', csv], { type: 'text/csv;charset=utf-8;' });
