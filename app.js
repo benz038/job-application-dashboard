@@ -180,7 +180,7 @@
     event.preventDefault(); els.error.textContent = '';
     const company = els.company.value.trim(); const role = els.role.value.trim(); const url = els.url.value.trim();
     if (!company || !role || !els.date.value) { els.error.textContent = 'Company, role and date applied are required.'; return; }
-    if (!sources.includes(els.source.value)) { els.error.textContent = 'Choose Career site or Referral as the application source.'; return; }
+    if (!sources.includes(els.source.value)) { els.error.textContent = 'Choose Career site, Referral, or Email as the application source.'; return; }
     if (url && !safeHttpUrl(url)) { els.error.textContent = 'Enter a valid http:// or https:// job URL.'; return; }
     const id = els.id.value || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`);
     const previous = applications.find((a) => a.id === id);

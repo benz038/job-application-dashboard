@@ -6,7 +6,7 @@ A lightweight, responsive job application tracker built with plain HTML, CSS and
 
 - Dashboard cards for total applications, in-progress applications, offers, and response rate
 - Create, edit, and delete applications
-- Track company, role, date applied, status, application source (career site or referral), job posting URL, and notes
+- Track company, role, date applied, status, application source (career site, referral, or email), job posting URL, and notes
 - Search by company/role/source/notes; filter by status; sort by date or company
 - Export applications to CSV
 - Responsive layout with page scrolling on desktop and mobile
