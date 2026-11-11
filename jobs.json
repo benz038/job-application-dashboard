@@ -1,5 +1,17 @@
 [
   {
+    "id": "85bb0ef8-be93-42b4-a88c-13cbf0900bc4",
+    "company": "Microsoft",
+    "role": "Software Engineer",
+    "date": "2026-11-11",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://apply.careers.microsoft.com/careers/job/1970393557050960",
+    "notes": "",
+    "createdAt": "2026-11-11T08:19:36.752Z",
+    "updatedAt": "2026-11-11T08:19:36.752Z"
+  },
+  {
     "id": "02962848-b3bf-4983-b43a-7568b0fc8d0b",
     "company": "Docusign",
     "role": "Software Engineer",
