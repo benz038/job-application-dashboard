@@ -1,5 +1,17 @@
 [
   {
+    "id": "02962848-b3bf-4983-b43a-7568b0fc8d0b",
+    "company": "Docusign",
+    "role": "Software Engineer",
+    "date": "2026-11-11",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://careers.docusign.com/careers-home/jobs/30404?lang=en-us&iis=Job%20board&iisn=LinkedIn",
+    "notes": "",
+    "createdAt": "2026-11-11T05:14:32.667Z",
+    "updatedAt": "2026-11-11T05:14:32.667Z"
+  },
+  {
     "id": "c31ebd4b-4225-4cb2-a1ed-244b717a2717",
     "company": "HPE",
     "role": "Software Engineer 2",
@@ -100,12 +112,12 @@
     "company": "citi",
     "role": "Software Engineer 1",
     "date": "2026-11-02",
-    "status": "Applied",
+    "status": "Rejected",
     "source": "Referral",
     "url": "https://jobs.citi.com/job/-/-/287/102161061744?source=APPLICANT_SOURCE-3-354&utm_medium=job_posting&utm_campaign=apac_experienced&utm_content=social_media&utm_term=393693070&ss=paid&utm_source=linkedin",
     "notes": "referral piyush",
     "createdAt": "2026-11-02T18:11:23.171Z",
-    "updatedAt": "2026-11-10T13:42:21.483Z"
+    "updatedAt": "2026-11-11T07:16:33.753Z"
   },
   {
     "id": "b76fcc18-04b4-45ec-bc3b-70ad178e3a62",
