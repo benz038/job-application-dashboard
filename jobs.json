@@ -1,5 +1,53 @@
 [
   {
+    "id": "f8c8e37d-5fac-4248-b856-c5e8e273b748",
+    "company": "Ebay",
+    "role": "Software Engineer",
+    "date": "2026-11-14",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.ebayinc.com/us/en/job/EBAEBAUSR0075330EXTERNALENUS/Software-Engineer?utm_source=linkedin&utm_medium=phenom-feeds",
+    "notes": "",
+    "createdAt": "2026-11-14T18:12:05.051Z",
+    "updatedAt": "2026-11-14T18:12:05.051Z"
+  },
+  {
+    "id": "cd64ee81-7f77-4677-92fc-112174542cd2",
+    "company": "Phonepe",
+    "role": "Software Engineer",
+    "date": "2026-11-14",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000006099-software-engineer-backend-1-2-years-",
+    "notes": "",
+    "createdAt": "2026-11-14T18:03:05.203Z",
+    "updatedAt": "2026-11-14T18:03:05.203Z"
+  },
+  {
+    "id": "3d9535f1-0e2c-45d3-bd73-01ece5af5879",
+    "company": "Pluang",
+    "role": "Software Engineer 1",
+    "date": "2026-11-14",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://pluanghrms.darwinbox.com/ms/candidatev2/main/careers/jobDetails/a6af81e8a4a4e0?from=applied",
+    "notes": "",
+    "createdAt": "2026-11-14T18:02:20.153Z",
+    "updatedAt": "2026-11-14T18:02:20.153Z"
+  },
+  {
+    "id": "a972b8d8-6dd5-40c4-8f99-aeb6b17d6081",
+    "company": "Pure storage",
+    "role": "Staff software engineer",
+    "date": "2026-11-14",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://job-boards.greenhouse.io/purestorage/jobs/8382294/confirmation?gh_src=Simplify",
+    "notes": "",
+    "createdAt": "2026-11-14T17:58:41.545Z",
+    "updatedAt": "2026-11-14T17:58:41.545Z"
+  },
+  {
     "id": "85bb0ef8-be93-42b4-a88c-13cbf0900bc4",
     "company": "Microsoft",
     "role": "Software Engineer",
