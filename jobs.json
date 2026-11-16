@@ -1,5 +1,29 @@
 [
   {
+    "id": "d7f17015-7f00-44c1-907a-2097a7e55334",
+    "company": "Qualys",
+    "role": "Software Engineer",
+    "date": "2026-11-16",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://qualys.wd5.myworkdayjobs.com/en-US/Careers/job/Software-Engineer_R0004973",
+    "notes": "",
+    "createdAt": "2026-11-16T08:06:56.581Z",
+    "updatedAt": "2026-11-16T08:06:56.581Z"
+  },
+  {
+    "id": "4350f985-0113-441c-8784-5115fe490813",
+    "company": "Ebay",
+    "role": "Software Engineer",
+    "date": "2026-11-16",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.ebayinc.com/us/en/job/EBAEBAUSR0075330EXTERNALENUS/Software-Engineer",
+    "notes": "",
+    "createdAt": "2026-11-16T07:51:28.762Z",
+    "updatedAt": "2026-11-16T07:51:52.143Z"
+  },
+  {
     "id": "f8c8e37d-5fac-4248-b856-c5e8e273b748",
     "company": "Ebay",
     "role": "Software Engineer",
