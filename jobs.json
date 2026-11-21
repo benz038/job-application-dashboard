@@ -1,5 +1,17 @@
 [
   {
+    "id": "7b8f1de1-f30e-41d9-b858-209666d83c20",
+    "company": "Tracxn",
+    "role": "Software Engineer 2",
+    "date": "2026-11-21",
+    "status": "Applied",
+    "source": "Email",
+    "url": "https://mail.google.com/mail/u/0/#search/Tracxn/FMfcgzQjgzrCKMXJsMvHvJPfNbMSXNnB",
+    "notes": "Hirist app",
+    "createdAt": "2026-11-21T06:28:30.789Z",
+    "updatedAt": "2026-11-21T06:28:30.789Z"
+  },
+  {
     "id": "d7f17015-7f00-44c1-907a-2097a7e55334",
     "company": "Qualys",
     "role": "Software Engineer",
