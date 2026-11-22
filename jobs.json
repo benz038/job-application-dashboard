@@ -1,5 +1,29 @@
 [
   {
+    "id": "d397817a-5818-44bb-9b8b-3b653b7dde7e",
+    "company": "NetWeb",
+    "role": "Software Engineer",
+    "date": "2026-11-21",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://mail.google.com/mail/u/0/#inbox/FMfcgzQjgzrCSjvHmNqZmNvmgCGGPMJC",
+    "notes": "hirist",
+    "createdAt": "2026-11-21T06:46:08.665Z",
+    "updatedAt": "2026-11-21T06:46:08.665Z"
+  },
+  {
+    "id": "cb6dacf5-0851-42f3-b7fa-d7bfe712c561",
+    "company": "Wayfair",
+    "role": "Software Engineer",
+    "date": "2026-11-21",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://mail.google.com/mail/u/0/#inbox/FMfcgzQjgzrCShpXsvwHQgNkhCQbtqKj",
+    "notes": "Hirist",
+    "createdAt": "2026-11-21T06:45:41.691Z",
+    "updatedAt": "2026-11-21T06:45:41.691Z"
+  },
+  {
     "id": "7b8f1de1-f30e-41d9-b858-209666d83c20",
     "company": "Tracxn",
     "role": "Software Engineer 2",
