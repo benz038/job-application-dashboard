@@ -1,5 +1,17 @@
 [
   {
+    "id": "4d21b080-2f2e-4eb7-bf04-15836e412846",
+    "company": "Locus",
+    "role": "Software Engineer 2",
+    "date": "2026-11-25",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://locus.darwinbox.in/ms/candidatev2/main/applications/a6aec48c7f070d?title=SDE-2%20Backend",
+    "notes": "",
+    "createdAt": "2026-11-25T17:09:34.662Z",
+    "updatedAt": "2026-11-25T17:09:34.662Z"
+  },
+  {
     "id": "d397817a-5818-44bb-9b8b-3b653b7dde7e",
     "company": "NetWeb",
     "role": "Software Engineer",
