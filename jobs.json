@@ -1,15 +1,51 @@
 [
   {
+    "id": "7de5a5b6-d7e3-487a-9cfc-8f575bcc91a6",
+    "company": "Finserv",
+    "role": "Software Engineer",
+    "date": "2026-11-27",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://careers.fiserv.com/us/en/job/FFFYJUSR10404037EXTERNALENUS/Software-Development-Engineer",
+    "notes": "",
+    "createdAt": "2026-11-27T09:03:16.109Z",
+    "updatedAt": "2026-11-27T09:03:16.109Z"
+  },
+  {
+    "id": "964fc7a7-de3e-4f45-8dfa-622a7d605f9f",
+    "company": "FloQast",
+    "role": "Software Engineer 2",
+    "date": "2026-11-26",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.lever.co/floqast/3c2e2a98-1c72-4f19-97fb-2f979a5eb534/apply?source=LinkedIn",
+    "notes": "",
+    "createdAt": "2026-11-26T09:16:03.307Z",
+    "updatedAt": "2026-11-26T09:16:03.307Z"
+  },
+  {
+    "id": "9fdb1697-f667-476a-950e-53415413ce65",
+    "company": "Wayfair",
+    "role": "Software Engineer 2",
+    "date": "2026-11-26",
+    "status": "Withdrawn",
+    "source": "Career site",
+    "url": "https://www.wayfair.com/careers/job/software-engineer-ii/2-21085",
+    "notes": "portal",
+    "createdAt": "2026-11-26T09:11:09.729Z",
+    "updatedAt": "2026-11-26T09:15:11.927Z"
+  },
+  {
     "id": "4d21b080-2f2e-4eb7-bf04-15836e412846",
     "company": "Locus",
     "role": "Software Engineer 2",
     "date": "2026-11-25",
-    "status": "Applied",
+    "status": "Rejected",
     "source": "Career site",
     "url": "https://locus.darwinbox.in/ms/candidatev2/main/applications/a6aec48c7f070d?title=SDE-2%20Backend",
     "notes": "",
     "createdAt": "2026-11-25T17:09:34.662Z",
-    "updatedAt": "2026-11-25T17:09:34.662Z"
+    "updatedAt": "2026-11-27T12:47:02.533Z"
   },
   {
     "id": "d397817a-5818-44bb-9b8b-3b653b7dde7e",
@@ -40,12 +76,12 @@
     "company": "Tracxn",
     "role": "Software Engineer 2",
     "date": "2026-11-21",
-    "status": "Applied",
+    "status": "Rejected",
     "source": "Email",
     "url": "https://mail.google.com/mail/u/0/#search/Tracxn/FMfcgzQjgzrCKMXJsMvHvJPfNbMSXNnB",
     "notes": "Hirist app",
     "createdAt": "2026-11-21T06:28:30.789Z",
-    "updatedAt": "2026-11-21T06:28:30.789Z"
+    "updatedAt": "2026-11-26T18:52:05.701Z"
   },
   {
     "id": "d7f17015-7f00-44c1-907a-2097a7e55334",
@@ -136,12 +172,12 @@
     "company": "Docusign",
     "role": "Software Engineer",
     "date": "2026-11-11",
-    "status": "Applied",
+    "status": "Rejected",
     "source": "Career site",
     "url": "https://careers.docusign.com/careers-home/jobs/30404?lang=en-us&iis=Job%20board&iisn=LinkedIn",
     "notes": "",
     "createdAt": "2026-11-11T05:14:32.667Z",
-    "updatedAt": "2026-11-11T05:14:32.667Z"
+    "updatedAt": "2026-11-26T07:45:57.820Z"
   },
   {
     "id": "c31ebd4b-4225-4cb2-a1ed-244b717a2717",
