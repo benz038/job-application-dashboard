@@ -1,5 +1,29 @@
 [
   {
+    "id": "b79f3fa9-9ee0-49b1-8a37-4bf0ade44233",
+    "company": "Meesho",
+    "role": "Software Engineer 2",
+    "date": "2026-11-28",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.lever.co/meesho/9ae5ca62-3b5f-4bc4-9986-5c475f597223",
+    "notes": "",
+    "createdAt": "2026-11-28T09:11:38.105Z",
+    "updatedAt": "2026-11-28T09:11:38.105Z"
+  },
+  {
+    "id": "40686f3c-45c2-4215-bcfb-e0a7a4c6a281",
+    "company": "Meesho",
+    "role": "Software Engineer",
+    "date": "2026-11-28",
+    "status": "Applied",
+    "source": "Career site",
+    "url": "https://jobs.lever.co/meesho/73db1822-f3de-4f9f-a2b3-944ea0b03702",
+    "notes": "",
+    "createdAt": "2026-11-28T09:11:14.708Z",
+    "updatedAt": "2026-11-28T09:11:14.708Z"
+  },
+  {
     "id": "7de5a5b6-d7e3-487a-9cfc-8f575bcc91a6",
     "company": "Finserv",
     "role": "Software Engineer",
@@ -184,12 +208,12 @@
     "company": "HPE",
     "role": "Software Engineer 2",
     "date": "2026-11-10",
-    "status": "Applied",
+    "status": "Rejected",
     "source": "Career site",
     "url": "https://careers.hpe.com/us/en/job/1214507/Software-Engineer-2?utm_source=linkedin",
     "notes": "",
     "createdAt": "2026-11-10T18:49:52.358Z",
-    "updatedAt": "2026-11-10T18:49:52.358Z"
+    "updatedAt": "2026-11-28T09:12:00.919Z"
   },
   {
     "id": "b233f0df-ea18-45f9-8bd6-a5a016b798c9",
